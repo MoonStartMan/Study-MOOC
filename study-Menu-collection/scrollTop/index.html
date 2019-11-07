@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回到菜单顶部</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1190px;
+            margin: 0 auto;
+        }
+        #btn{
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            margin-left: 620px;
+            width: 40px;
+            height: 40px;
+            background: url("./img/top_bg.png") top left no-repeat;
+            display: none;
+        }
+        #btn:hover{
+            background-position: 0 -40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/tb_bg.jpg" alt="">
+    </div>
+    <a href="javascript:void(0);" id="btn" title="回到顶部">
+    </a>
+</body>
+<script>
+    //  页面加载完毕后出发
+    window.onload = function() {
+        var btn = document.getElementById("btn");
+        var timer = null;   //  滚动时间定时器
+        var isTop = true;   //  滚动的时候在滚动的时候解决继续滚动bug的状态值
+        var clienHeight = document.documentElement.clientHeight;    //  获取页面可视区的高度
+
+        //  浏览器开始滚动就开始执行的事件
+        window.onscroll= function () {
+            var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+            //  超过可视化区域显示按钮，没有超过隐藏。
+            if(osTop >= clienHeight) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+            if(!isTop) {
+                clearInterval(timer);
+            }
+            isTop = false;
+        }
+
+        btn.onclick = function() {
+            //  设置定时器
+            timer = setInterval(function() {
+                //  获取滚动条距离顶部的高度
+                var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+                console.log(osTop);
+                //  速度
+                var isspeed = Math.floor(-osTop / 6);
+                document.documentElement.scrollTop = document.body.scrollTop = osTop + isspeed;
+
+                if(osTop == 0) {
+                    clearInterval(timer);
+                }
+                isTop = true;
+            }, 30);
+        }
+    }
+</script>
+</html>

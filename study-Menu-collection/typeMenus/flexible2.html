@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伸缩菜单-水平方向</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .content{
+        margin: 200px auto;
+    }
+    .content ul li {
+        list-style: none;
+        float: left;
+    }
+    .content ul li a{
+        display: block;
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-indent: 20px;
+        text-align: center;
+        font-size: 20px;
+        text-decoration: none;
+        background-color: #eaeaea;
+        color: #5a5a5a;
+    }
+    .content ul li a:hover{
+        color: #ffffff;
+        background-color: #f00;
+    }
+    .content ul ::after{
+        display: block;
+        content: "";
+        overflow: hidden;
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li><a href="javascript:void(0)">菜单1</a></li>
+            <li><a href="javascript:void(0)">菜单2</a></li>
+            <li><a href="javascript:void(0)">菜单3</a></li>
+            <li><a href="javascript:void(0)">菜单4</a></li>
+            <li><a href="javascript:void(0)">菜单5</a></li>
+            <li><a href="javascript:void(0)">菜单6</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var lists = document.getElementsByTagName("a");
+        for(let i=0; i<lists.length; i++) {
+            lists[i].onmouseover = function() {
+                var This = this;
+                This.time = setInterval(function() {
+                    This.style.width = This.offsetWidth + 8 + "px";
+                    if(This.offsetWidth >= 160) {
+                        clearInterval(This.time)
+                    }
+                },30)
+            }
+            lists[i].onmouseleave = function() {
+                var This = this;
+                This.time = setInterval(function() {
+                    This.style.width = This.offsetWidth - 8 + "px";
+                    if(This.offsetWidth <= 120) {
+                        clearInterval(This.time)
+                    }
+                },30)
+            }
+        }
+    }
+</script>
+</html>
