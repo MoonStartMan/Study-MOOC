@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两列布局的第三种解决方案</title>
+    <style>
+    #parent{
+        /* 表格的单元格的宽度会自动分配 */
+        display: table;
+        table-layout: fixed;
+        /* 
+            table-layout属性为表设置表格布局算法。 
+            fixed	列宽由表格宽度和列宽度设定。
+        */
+        width: 100%;
+    }
+    #left, 
+    #right{
+        height: 300px;
+
+        display: table-cell;
+    }
+    #left{
+        width: 300px;
+        background-color: #c9394a;
+    }
+    #right{
+        background-color: #cccccc;
+    }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    优点：浏览器兼容性比较好。
+    缺点：将所有元素的display属性设置为table相关值,受到相应制约。
+ -->

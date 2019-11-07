@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两列布局的第一种解决方案</title>
+    <style>
+    #left, 
+    #right{
+        height: 300px;
+    }
+    #left{
+        /* 定宽 */
+        width: 300px;
+        background-color: #c9394a;
+        /* 当前元素脱离文档流 */
+        float: left;
+    }
+    #right{
+        background-color: #cccccc;
+
+        margin-left: 300px;
+    }
+    </style>
+</head>
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+</body>
+</html>
+
+<!-- 
+    优点：实现方式简单
+    缺点：
+        自适应元素margin属性值与定宽元素的width属性值保持一致
+        定宽元素浮动与自适应元素不浮动导致浏览器兼容性不好
+ -->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第二种水平居中方法</title>
+    <style>
+    #parent{
+        width: 100%;
+        height: 200px;
+        background: #cccccc;
+    }
+    #child{
+        width: 200px;
+        height: 200px;
+        background: #c9394a;
+        /* display值为 table 和 block */
+        display: table;
+        /* 
+            margin属性：外边距
+                * 一个值 - 上右下左
+                * 两个值 - 第一个表示上下，第二个表示左右
+                  * auto - 表示根据浏览器自动分配
+                * 三个值 - 第一个值表示上，第二个表示左右，第三个值表示下。
+                * 四个值 - 上右下左
+         */
+        margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+    <!-- 定义父级元素 -->
+    <div id="parent">
+        <!-- 定义子级元素 -->
+        <div id="child">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    优点：只需要对子级元素进行设置就可以实现水平方向居中布局效果。
+    缺点：如果子级元素脱离文档流，导致margin属性的值无效。
+        脱离文档流：
+        1. 浮动
+        2. absolute定位
+        3. fixed定位
+ -->
