@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-jQuery入口函数测试</title>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        /*
+            jQ入口函数传入不同参数得到的实例
+            1.传入 '' null undefined NaN 0 false
+            2.传入html片段
+            3.传入选择器
+            4.传入数组
+            5.传入伪数组
+            6.传入对象
+            7.传入DOM
+            8.传入基本数据类型
+        */
+
+        //  1.传入 '' null undefined NaN 0 false
+        //  会返回一个空的jQuery对象给我们
+        //  console.log($());
+        //  console.log($(''));
+        //  console.log($(null));
+        //  console.log($(undefined));
+        //  console.log($(NaN));
+        //  console.log($(0));
+        //  console.log($(false));
+
+        // 2.传入html片段
+        //  会将创建好的DOM元素存储到jQuery对象中返回
+        // console.log($('<p>1</p><p>2</p><p><p>3</p>'));
+
+        // 3.传入选择器
+        //  会将找到的所有元素存储到jQuery对象中返回
+        // console.log($('li'));
+
+        // 4.传入数组
+        // 会将数组中存储的元素依次存储到jQuery对象中
+        // console.log($([1,2,3,4,5,6]));
+
+        //  5.传入伪数组
+        // 会将数组中存储的元素依次存储到jQuery对象中
+        // var likeArr = {0: "lnj", 1: "33", 2: "male", length:3}
+        // console.log($(likeArr));
+
+        // 6.传入对象
+        // 会将传入的对象存储到jQuery对象中返回
+        // function Person() {}
+        // console.log($(new Person()));
+
+        // 7.传入DOM元素
+        // 会将传入的DOM元素存到jQuery对象中返回
+        // console.log($(document.createElement('div')));
+
+        // 8.传入基本数据类型
+        // 会将传入的基本类型存到jQuery对象中返回
+        // console.log($(123));
+        // console.log($(true));
+
+        /*
+            1.传入 '' null undefined NaN 0 false。返回空的jQuery对象
+            2.字符串:
+            代码片段:会将创建好的DOM元素存储到jQuery对象中返回
+            选择器: 会将找到的所有元素存储到jQuery对象中返回
+            3.数组:
+            会将数组中存储的元素依次存储到jQuery对象中
+            4.除上诉类型以外的:
+            会将传入的数据存到jQuery对象中返回
+        */
+    </script>
+</body>
+</html>
