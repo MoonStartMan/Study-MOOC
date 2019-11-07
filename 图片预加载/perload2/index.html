@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片预加载之无序加载--QQ表情</title>
+    <style>
+        body, p, ul, li {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #eeeeee;
+        }
+        .box{
+            margin: 150px 0 0 200px;
+        }
+        a{
+            text-decoration: none;
+            outline: none;
+        }
+        li{
+            list-style-type: none;
+        }
+        #facebtn{
+            display: block;
+            color: hotpink;
+        }
+        #facebtn:hover{
+            color: #06c;
+        }
+        .panel{
+            width: 390px;
+            padding: 2px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            display: none;
+        }
+        .loading{
+            text-align: center;
+        }
+        .list li {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #fff;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .list li:hover{
+            border-color: #06c;
+        }
+    </style>
+</head>
+<body>
+   <div>
+        <a href="javascript:;" id="facebtn">表情</a>
+        <div class="panel">
+            <p class="loading">表情加载中，请稍后...</p>
+            <!-- <ul class="list">
+                <li><img src="img/1.gif" alt=""></li>
+                <li><img src="img/2.gif" alt=""></li>
+                <li><img src="img/3.gif" alt=""></li>
+                <li><img src="img/4.gif" alt=""></li>
+                <li><img src="img/5.gif" alt=""></li>
+                <li><img src="img/6.gif" alt=""></li>
+                <li><img src="img/7.gif" alt=""></li>
+                <li><img src="img/8.gif" alt=""></li>
+                <li><img src="img/9.gif" alt=""></li>
+                <li><img src="img/10.gif" alt=""></li>
+                <li><img src="img/11.gif" alt=""></li>
+                <li><img src="img/12.gif" alt=""></li>
+                <li><img src="img/13.gif" alt=""></li>
+                <li><img src="img/14.gif" alt=""></li>
+                <li><img src="img/15.gif" alt=""></li>
+                <li><img src="img/16.gif" alt=""></li>
+                <li><img src="img/17.gif" alt=""></li>
+                <li><img src="img/18.gif" alt=""></li>
+                <li><img src="img/19.gif" alt=""></li>
+                <li><img src="img/20.gif" alt=""></li>
+                <li><img src="img/21.gif" alt=""></li>
+                <li><img src="img/22.gif" alt=""></li>
+                <li><img src="img/23.gif" alt=""></li>
+                <li><img src="img/24.gif" alt=""></li>
+                <li><img src="img/25.gif" alt=""></li>
+                <li><img src="img/26.gif" alt=""></li>
+                <li><img src="img/27.gif" alt=""></li>
+                <li><img src="img/28.gif" alt=""></li>
+                <li><img src="img/29.gif" alt=""></li>
+                <li><img src="img/30.gif" alt=""></li>
+                <li><img src="img/31.gif" alt=""></li>
+                <li><img src="img/32.gif" alt=""></li>
+                <li><img src="img/33.gif" alt=""></li>
+                <li><img src="img/34.gif" alt=""></li>
+                <li><img src="img/35.gif" alt=""></li>
+                <li><img src="img/36.gif" alt=""></li>
+                <li><img src="img/37.gif" alt=""></li>
+                <li><img src="img/38.gif" alt=""></li>
+                <li><img src="img/39.gif" alt=""></li>
+                <li><img src="img/40.gif" alt=""></li>
+                <li><img src="img/41.gif" alt=""></li>
+                <li><img src="img/42.gif" alt=""></li>
+                <li><img src="img/43.gif" alt=""></li>
+                <li><img src="img/44.gif" alt=""></li>
+                <li><img src="img/45.gif" alt=""></li>
+                <li><img src="img/46.gif" alt=""></li>
+                <li><img src="img/47.gif" alt=""></li>
+                <li><img src="img/48.gif" alt=""></li>
+                <li><img src="img/49.gif" alt=""></li>
+                <li><img src="img/50.gif" alt=""></li>
+                <li><img src="img/51.gif" alt=""></li>
+                <li><img src="img/52.gif" alt=""></li>
+                <li><img src="img/53.gif" alt=""></li>
+                <li><img src="img/54.gif" alt=""></li>
+                <li><img src="img/55.gif" alt=""></li>
+                <li><img src="img/56.gif" alt=""></li>
+                <li><img src="img/57.gif" alt=""></li>
+                <li><img src="img/58.gif" alt=""></li>
+                <li><img src="img/59.gif" alt=""></li>
+                <li><img src="img/60.gif" alt=""></li>
+                <li><img src="img/61.gif" alt=""></li>
+                <li><img src="img/62.gif" alt=""></li>
+                <li><img src="img/63.gif" alt=""></li>
+                <li><img src="img/64.gif" alt=""></li>
+                <li><img src="img/65.gif" alt=""></li>
+                <li><img src="img/66.gif" alt=""></li>
+                <li><img src="img/67.gif" alt=""></li>
+                <li><img src="img/68.gif" alt=""></li>
+                <li><img src="img/69.gif" alt=""></li>
+                <li><img src="img/70.gif" alt=""></li>
+                <li><img src="img/71.gif" alt=""></li>
+                <li><img src="img/72.gif" alt=""></li>
+                <li><img src="img/73.gif" alt=""></li>
+                <li><img src="img/74.gif" alt=""></li>
+                <li><img src="img/75.gif" alt=""></li>
+                <li><img src="img/76.gif" alt=""></li>
+                <li><img src="img/77.gif" alt=""></li>
+                <li><img src="img/78.gif" alt=""></li>
+                <li><img src="img/79.gif" alt=""></li>
+                <li><img src="img/80.gif" alt=""></li>
+                <li><img src="img/81.gif" alt=""></li>
+                <li><img src="img/82.gif" alt=""></li>
+                <li><img src="img/83.gif" alt=""></li>
+                <li><img src="img/84.gif" alt=""></li>
+                <li><img src="img/85.gif" alt=""></li>
+                <li><img src="img/86.gif" alt=""></li>
+                <li><img src="img/87.gif" alt=""></li>
+                <li><img src="img/88.gif" alt=""></li>
+                <li><img src="img/89.gif" alt=""></li>
+                <li><img src="img/90.gif" alt=""></li>
+                <li><img src="img/91.gif" alt=""></li>
+                <li><img src="img/92.gif" alt=""></li>
+                <li><img src="img/93.gif" alt=""></li>
+                <li><img src="img/94.gif" alt=""></li>
+                <li><img src="img/95.gif" alt=""></li>
+                <li><img src="img/96.gif" alt=""></li>
+                <li><img src="img/97.gif" alt=""></li>
+                <li><img src="img/98.gif" alt=""></li>
+                <li><img src="img/99.gif" alt=""></li>
+                <li><img src="img/100.gif" alt=""></li>
+                <li><img src="img/101.gif" alt=""></li>
+                <li><img src="img/102.gif" alt=""></li>
+                <li><img src="img/103.gif" alt=""></li>
+                <li><img src="img/104.gif" alt=""></li>
+                <li><img src="img/105.gif" alt=""></li>
+                <li><img src="img/106.gif" alt=""></li>
+                <li><img src="img/107.gif" alt=""></li>
+                <li><img src="img/108.gif" alt=""></li>
+                <li><img src="img/109.gif" alt=""></li>
+                <li><img src="img/110.gif" alt=""></li>
+                <li><img src="img/111.gif" alt=""></li>
+                <li><img src="img/112.gif" alt=""></li>
+                <li><img src="img/113.gif" alt=""></li>
+                <li><img src="img/114.gif" alt=""></li>
+                <li><img src="img/115.gif" alt=""></li>
+                <li><img src="img/116.gif" alt=""></li>
+                <li><img src="img/117.gif" alt=""></li>
+                <li><img src="img/118.gif" alt=""></li>
+                <li><img src="img/119.gif" alt=""></li>
+                <li><img src="img/120.gif" alt=""></li>
+                <li><img src="img/121.gif" alt=""></li>
+                <li><img src="img/122.gif" alt=""></li>
+                <li><img src="img/123.gif" alt=""></li>
+                <li><img src="img/124.gif" alt=""></li>
+                <li><img src="img/125.gif" alt=""></li>
+                <li><img src="img/126.gif" alt=""></li>
+                <li><img src="img/127.gif" alt=""></li>
+                <li><img src="img/128.gif" alt=""></li>
+                <li><img src="img/129.gif" alt=""></li>
+                <li><img src="img/130.gif" alt=""></li>
+                <li><img src="img/131.gif" alt=""></li>
+                <li><img src="img/132.gif" alt=""></li>
+            </ul> -->
+        </div>
+    </div>
+</body>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/preload.js"></script>
+<script>
+    var $btn = $("#facebtn");
+    $panel = $(".panel");
+    
+    var imgs = [];
+
+    for(var i = 0; i < 132; i++) {
+        imgs[i] = 'img/' + (i + 1) + '.gif';
+    }
+
+    var len = imgs.length;
+
+    $btn.on('click', function(e){
+        e.stopPropagation();
+        $panel.show();
+        $.preload(imgs, {
+            all: function() {
+                var html = '';
+                html += '<ul class="list">';
+                
+                for(var i=0; i < len; i++) {
+                    html += '<li><img src="'+imgs[i]+'" alt=""></li>';
+                }
+
+                html += '</ul>';
+
+                setTimeout(function() {
+                    $panel.html(html);
+                },1000)
+            }
+        })
+    })
+
+    $(document).on('click', function() {
+        $panel.hide()
+    })
+
+</script>
+</html>
