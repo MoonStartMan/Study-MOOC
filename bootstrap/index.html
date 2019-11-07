@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>接口调用</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="content">
+            <div>开始时间：</div>
+            <div>结束时间：</div>
+            <div>总分：</div>
+            <div>阶段得分：</div>
+            <div>文字描述：</div>
+        </div> -->
+    </div>
+</body>
+<script>
+    function createTemplate(template) {
+        for(let i=0; i<template.length; i++) {
+            const templateItem = template[i];
+            // $(".container").append(
+            //     `
+            //     <div class="content">
+            //         <div>开始时间：${templateItem.start_time}</div>
+            //         <div>结束时间：${templateItem.end_time}</div>
+            //         <div>总分：${templateItem.score}</div>
+            //         <div>阶段得分：${templateItem.get_score}</div>
+            //         <div>文字描述：${templateItem.text}</div>
+            //     </div>
+            //     `
+            // )
+            $(".container").append("\n                <div class=\"content\">\n                    <div>\u5F00\u59CB\u65F6\u95F4\uFF1A".concat(templateItem.start_time, "</div>\n                    <div>\u7ED3\u675F\u65F6\u95F4\uFF1A").concat(templateItem.end_time, "</div>\n                    <div>\u603B\u5206\uFF1A").concat(templateItem.score, "</div>\n                    <div>\u9636\u6BB5\u5F97\u5206\uFF1A").concat(templateItem.get_score, "</div>\n                    <div>\u6587\u5B57\u63CF\u8FF0\uFF1A").concat(templateItem.text, "</div>\n                </div>\n                "));
+        }
+    }
+    $.ajax({
+        type:"GET",
+        url:"http://10.20.8.166/project/project_one/teacher/test.php",
+        dataType:"json",
+        success:function(data){
+           createTemplate(data);
+        },
+        error:function(){
+           alert("error!");
+        }
+});
+</script>
+</html>
