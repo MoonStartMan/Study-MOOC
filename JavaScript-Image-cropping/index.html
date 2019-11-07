@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS实现图片不透明及裁剪效果</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="box">
+        <img src="./car.jpg" alt="" id="img1" />
+        <img src="./car.jpg" alt="" id="img2" />
+        <div id="main">
+            <div class="minDiv left-up" id="left-up"></div>
+            <div class="minDiv up" id="up"></div>
+            <div class="minDiv right-up" id="right-up"></div>
+            <div class="minDiv right" id="right"></div>
+            <div class="minDiv right-down" id="right-down"></div>
+            <div class="minDiv down" id="down"></div>
+            <div class="minDiv left-down" id="left-down"></div>
+            <div class="minDiv left" id="left"></div>
+        </div>
+    </div>
+    <div id="preview">
+        <img id="img3" class="img3" src="./car.jpg"/>
+    </div>
+</body>
+<script src="./jquery-1.8.1.min.js"></script>
+<script src="./jquery-ui-1.10.4.custom.min.js"></script>
+<script src="./index.js"></script>
+</html>
