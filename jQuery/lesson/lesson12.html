@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery的stop和delay方法</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .two{
+            width: 500px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>开始动画</button>
+    <button>停止动画</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+<script>
+    // $("button").eq(0).click(function(){
+    //     $(".one").animate({
+    //         "width": 500,
+    //         "height": 500
+    //     },1000)
+    // })
+    // $("button").eq(0).click(function(){
+    //     $(".one").animate({
+    //         "width": 500
+    //     },1000)
+    //     $(".one").animate({
+    //         "height": 500
+    //     })
+    // })
+    $("button").eq(0).click(function(){
+        $(".one").animate({
+            "width": 500
+            // delay方法的作用域就是用于告诉系统延长
+        },1000).delay(2000).animate({
+            "height": 500
+        })
+    })
+    $("button").eq(1).click(function(){
+        // $("div").stop();
+        // 立即停止当前动画，继续执行后续动画
+        $("div").stop(false);
+        // 立即停止当前动画和后续动画
+        $("div").stop(true);
+        // 立即完成当前动画，继续执行后续动画
+        $("div").stop(false,true);
+        // 立即完成当前的，并且立即停止后续的所有
+        $("div").stop(true, true);
+    })
+</script>
+</html>

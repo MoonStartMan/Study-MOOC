@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 800px;
+    height: auto;
+    margin: 100px auto;
+    border: 1px solid #000000;
+}
+
+.text-box{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.text-box textarea{
+    width: 600px;
+    height: 100px;
+    margin-left: 100px;
+    resize: none;
+    border: none;
+}
+
+.text-box button{
+    bottom: 20px;
+    right: 100px;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-bottom: 1px solid #000000;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+
+.remove{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #000000;
+    cursor: pointer;
+}

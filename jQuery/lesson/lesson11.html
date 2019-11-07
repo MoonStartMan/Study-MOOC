@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义动画</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
+            background-color: yellowgreen;
+        }
+        .box.two{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>增加属性</button>
+    <button>累加属性</button>
+    <button>关键字</button>
+    <div class="box one"></div>
+    <div class="box two"></div>
+</body>
+<script>
+    $("button").eq(0).click(function(){
+
+        /*
+        第一个参数：接收一个对象，可以对象中修改属性。
+        第二个参数：指定动画时长。
+        第三个参数：指定动画节奏，默认是swing。
+        第四个参数：动画执行完毕之后的回调函数。
+        */
+        $(".one").animate({
+            marginLeft: 500
+        },1000,function(){
+            // alert("自定义动画执行完毕");
+        })
+        $(".two").animate({
+            marginLeft: 500
+        },1000,"linear",function(){
+            // alert("自定义动画执行完毕");
+        })
+    })
+    $("button").eq(1).click(function(){
+        $(".one").animate({
+            width: "+=100"
+        },1000,function(){
+            alert("自定义动画执行完毕");
+        })
+    })
+    $("button").eq(2).click(function(){
+        $(".one").animate({
+            width: "toggle"
+        },1000,function(){
+            alert("自定义动画执行完毕");
+        })
+    })
+</script>
+</html>

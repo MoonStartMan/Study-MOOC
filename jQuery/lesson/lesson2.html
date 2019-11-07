@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电影排行榜</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 300px;
+        height: 450px;
+        margin: 50px auto;
+        border: 1px solid #000000;
+    }
+    .box>h1{
+        font-size: 20px;
+        line-height: 35px;
+        color: deeppink;
+        padding-left: 10px;
+    }
+    ul>li{
+        list-style: none;
+        padding: 5px 10px;
+        border: 1px dashed #ccc;
+    }
+    ul>li:nth-child(-n+3) span{
+        background: deeppink;
+    }
+    ul>li>span{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background-color: #ccc;
+    }
+    .content{
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+    .content img{
+        max-width: 50%;
+        height: auto;
+        display: block;
+        float: left;
+    }
+    .active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <div class="box">
+        <h1>电影名称</h1>
+        <ul>
+            <li>
+                <span>1</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>2</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>3</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>4</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>5</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>6</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+            <li>
+                <span>7</span>战狼2
+                <div class="content">
+                    <img src="../img/img.jpg" alt="">
+                    《战狼Ⅱ》是吴京执导的动作军事电影，由吴京、弗兰克·格里罗、吴刚、张翰、卢靖姗、淳于珊珊、丁海峰等主演。该片于2017年7月27日在中国内地上映 。该片讲述了脱下军装的冷锋被卷入了一场非洲国家的叛乱，本来能够安全撤离的他无法忘记军人的职责，重回战场展开救援的故事。本片以56.8亿元雄踞国产电影历史最高票房纪录。并在中国内地创下累计观影人次1.4亿的成绩，荣登“单一市场观影人次”全球榜首。
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // $("li").mouseenter(function(){
+    //     $(this).children(".content").addClass("active");
+    // })
+    // $("li").mouseleave(function(){
+    //     $(this).children(".content").removeClass("active");
+    // })
+    $("li").hover(function(){
+        $(this).children(".content").addClass("active");
+    },function(){
+        $(this).children(".content").removeClass("active");
+    })
+</script>
+</html>

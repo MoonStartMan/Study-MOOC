@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画展开和收起</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 300px;
+            background-color: rebeccapurple;
+            margin: 10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>展开</button>
+    <button>收起</button>
+    <button>切换</button>
+    <div class="box"></div>
+</body>
+<script>
+    $("button").eq(0).click(function(){
+        $(".box").slideDown(1000);
+    })
+    $("button").eq(1).click(function(){
+        $(".box").slideUp(1000);
+    })
+    $("button").eq(2).click(function(){
+        $(".box").slideToggle(1000);
+    })
+</script>
+</html>

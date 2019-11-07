@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画显示与隐藏</title>
+    <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 20px 0;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div class="box"></div>
+</body>
+<script>
+    $("button").eq(0).click(function(){
+        $(".box").show(1000,function(){
+            alert("动画显示完毕!");
+        })
+    })
+    $("button").eq(1).click(function(){
+        $(".box").hide(1000,function(){
+            alert("动画隐藏完毕!");
+        })
+    })
+    $("button").eq(2).click(function(){
+        $(".box").toggle(1000, function(){
+            alert("动画切换完毕!");
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery添加节点</title>
+    <style>
+        
+    </style>
+</head>     
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>新增节点</button>
+    <ul>
+        <li>我是第1个节点</li>
+        <li>我是第2个节点</li>
+        <li>我是第3个节点</li>
+    </ul>
+</body>
+
+<script>
+$("button").click(function(){
+    //  1.创建一个节点
+    var $li = $("<li>新增的li</li>")
+
+    //  2.将元素添加到指定元素内部的最后
+    // append(content|fn);
+    // appendTo(content);
+    // $("ul").append($li);
+    // $li.appendTo("ul");
+
+    // 3.将元素添加到指定元素的最前面
+     // prepend(content|fn);
+    // prependTo(content);
+    // $("ul").prepend($li);
+    // $li.prependTo("ul");
+
+    // 4.指定元素外部之后
+    // $("ul").after($li);
+    // $li.insertAfter("ul");
+
+    //  5.指定元素外部之前
+    // $("ul").before($li);
+})
+</script>
+</html>

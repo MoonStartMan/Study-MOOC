@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .menuList li {
+            width: 20%;
+            float: left;
+            border-bottom: 1px solid #ccc;
+            font-size: 24px;
+            padding: 20px 0;
+            text-align: center; 
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menuList">
+        <li class="menu">全部</li>
+        <li class="menu">待支付</li>
+        <li class="menu">待确认</li>
+        <li class="menu">待入住</li>
+        <li class="menu">已入住</li>
+    </ul>
+
+    <script type="text/javascript">
+        function siblings(elem){ //参数elem就是想取谁的兄弟节点，就把那个元素传进去 
+            var nodes=[]; //定义一个数组，用来存elem的兄弟元素 
+            var previ=elem.previousSibling; //  previousSibling前一个同胞节点
+            while(previ){ //先取o的哥哥们 判断有没有上一个哥哥元素，如果有则往下执行 previ表示previousSibling 
+                if(previ.nodeType===1){ 
+                    nodes.push(previ); 
+                } 
+                previ=previ.previousSibling; //最后把上一个节点赋给previ 
+            } 
+            nodes.reverse(); //把顺序反转一下 这样元素的顺序就是按先后的了 
+            var nexts=elem.nextSibling; //再取elem的弟弟 
+            while(nexts){ //判断有没有下一个弟弟结点 nexts是nextSibling的意思 
+                if(nexts.nodeType===1){ 
+                    nodes.push(nexts); 
+                } 
+                nexts=nexts.nextSibling;    //  nextSibling后一个同胞节点
+            } 
+            return nodes; //最后按从老大到老小的顺序，把这一组元素返回 
+        } 
+
+        var nowMenu = document.getElementsByClassName("menu"); //获取类名
+        for(var i=0; i<nowMenu.length; i++){
+            nowMenu[i].index = i;  //设置下标值
+            nowMenu[i].onclick = function(){
+                var index = this.index;  //获取下标值
+                var nowIndex = nowMenu[index];  //确认当前点击的标签
+                for(var m=0; m<nowMenu.length-1; m++){
+                    this.style.background = "#999";  //改变当前点击元素背景
+                    siblings(nowIndex)[m].style.background = "#ccc";  //改变当前点击的兄弟元素背景
+                }
+            }
+        }
+    </script>
+</body>
+</html>

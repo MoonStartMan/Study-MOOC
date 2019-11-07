@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery复制节点相关方法</title>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>浅复制节点</button>
+    <button>深复制节点</button>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+</body>
+<script>
+    //  如果传入flase是浅复制，如果是true是深复制。浅复制会复制元素不会复制事件，深复制会复制元素和元素事件。
+    $("button").eq(0).click(function(){
+        //  1.浅复制一个元素
+        var $li = $("li:first").clone(false);
+        //  2.将复制的元素添加到ul中
+        $("ul").append($li);
+    })
+    $("button").eq(1).click(function(){
+        //  1.深复制一个元素
+        var $li = $("li:first").clone(true);
+        //  2.将复制的元素添加到ul中
+        $("ul").append($li);
+    })
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淡入淡出动画</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: rebeccapurple;
+            margin: 10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>切换</button>
+    <button>淡入到</button>
+    <div class="box"></div>
+</body>
+<script>
+    $("button").eq(0).click(function(){
+        $(".box").fadeIn(1000,function(){
+            alert("淡入完毕");
+        })
+    })
+    $("button").eq(1).click(function(){
+        $(".box").fadeOut(1000,function(){
+            alert("淡出完毕");
+        })
+    })
+    $("button").eq(2).click(function(){
+        $(".box").fadeToggle(1000, function(){
+            alert("淡入淡出切换完毕");
+        })
+    })
+    $("button").eq(3).click(function(){
+        $(".box").fadeTo(1000,0.5,function(){
+            alert("淡入到完毕");
+        })
+    })
+</script>
+</html>

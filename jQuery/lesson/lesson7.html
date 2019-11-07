@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折叠菜单</title>
+    <style>
+        .box{
+            width: 400px;
+            margin: 100px auto;
+            border: 1px solid #000000;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        ul>li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            display: none;
+        }
+        .content>li{
+            background-color: #cccccc;
+        }
+        .content>li:hover{
+            background-color: yellowgreen;
+        }
+        .title{
+            width: 100%;
+            line-height: 30px;
+            font-size: 18px;
+            text-indent: 20px;
+            background-color: deeppink;
+        }
+        .title span{
+            width: 100%;
+            height: 30px;
+            display: block;
+            position: relative;
+        }
+        img{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 20px;
+            margin: auto;
+        }
+        .rotate{
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <div class="box">
+        <ul class="sub">
+            <li class="title">
+                <span>一级菜单
+                    <img src="../img/right.png" alt="">
+                </span>
+                <ul class="content">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li class="title">
+                <span>一级菜单
+                    <img src="../img/right.png" alt="">
+                </span>
+                <ul class="content">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li class="title">
+                <span>一级菜单
+                    <img src="../img/right.png" alt="">
+                </span>
+                <ul class="content">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li class="title">
+                <span>一级菜单
+                    <img src="../img/right.png" alt="">
+                </span>
+                <ul class="content">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li class="title">
+                <span>一级菜单
+                    <img src="../img/right.png" alt="">
+                </span>
+                <ul class="content">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    $(".title").click(function(){
+        $(this).children(".content").slideDown();
+        $(this).siblings().children(".content").slideUp();
+        var index = $(this).index();
+        var img = $("img");
+        for(let i=0; i<img.length; i++) {
+            img.eq(i).removeClass("rotate");
+        }
+        img.eq(index).addClass("rotate");
+    })
+</script>
+</html>

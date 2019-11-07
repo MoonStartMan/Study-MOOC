@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson1</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .father{
+        width: 200px;
+        height: 200px;
+        background-color: rebeccapurple;
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+    }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+<script>
+    // mouseover/mouseout事件、子元素被移入移出也会触发父元素的事件
+    // $(".father").mouseover(function(){
+    //     console.log("移入!");
+    // })
+    // $(".father").mouseout(function(){
+    //     console.log("移出!");
+    // })
+    // mouseenter/mouseleave事件、子元素被移入移出不会触发父元素的事件
+    // $(".father").mouseenter(function(){
+    //     console.log("移入!");
+    // })
+    // $(".father").mouseleave(function(){
+    //     console.log("移出!");
+    // })
+    // hover()接收两个参数，一个是移入的事件、一个是移出的事件。
+    $(".father").hover(function(){
+        console.log("移入!");
+    },function(){
+        console.log("移出!");
+    })
+</script>
+</html>
