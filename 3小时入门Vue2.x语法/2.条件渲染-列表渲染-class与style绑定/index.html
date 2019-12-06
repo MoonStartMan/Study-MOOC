@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="count > 0">
+            count大于0,count的值是: {{count}}
+        </div>
+        <div v-else-if="count < 0 && count > -5">
+            判断2：count的值是：{{count}}
+        </div>
+        <div v-else>
+            count的值是: {{count}}
+        </div>
+        <div v-show="count == -1">show: {{count}}</div>
+        {{mgs}}
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: "Hello Vue",
+                count: 0
+            }
+        })
+    </script>
+</body>
+</html>
