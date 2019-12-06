@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-6编程练习</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr1 = [1, 2, 3, 4];
+    var arr2 = [2, 3, 4, 6];
+    function arraysSimilar(arr1, arr2) {
+        var count = 0;
+        if(arr1 instanceof Array && arr2 instanceof Array) {
+            console.log("两组数组成员类型相同");
+            count ++;
+        } else {
+            return;
+        }
+        if(arr1.length == arr2.length) {
+            console.log("两组数组长度相等");
+            count ++;
+        } else {
+            return;
+        }
+        function typeOf(ele) {
+            var r;
+            switch(ele) {
+                case null: r='null'; break;
+                case ele instanceof Array: r= 'array'; break;
+                case 'window': r='window'; break;
+                case ele instanceof Date: r= 'date'; break;
+                default: r=typeof ele; break;
+            }
+        }
+        var typeLists = ['string', 'boolean', 'number', 'undefined', 'null', 'function', 'date', 'window'];
+        var arr1Lists = [];
+        var arr2Lists = [];
+        var s1;
+        var s2;
+        for(var j=0; j<arr1.length; j++) {
+            s1 = typeOf(arr1[j]);
+            arr1Lists.push(s1);
+        }
+        for(var j=0; j<arr2.length; j++) {
+            s2 = typeOf(arr2[j]);
+            arr2Lists.push(s2);
+        }
+        for(var i=0; i<typeLists.length; i++) {
+            if(arr1Lists[typeLists[i]] !== arr2Lists[typeLists[i]]) {
+                return false;
+            }
+        }
+
+        count ++;
+
+        if(count === 3) {
+            alert("通过");
+        }
+    }
+    arraysSimilar(arr1, arr2);
+</script>
+</html>
