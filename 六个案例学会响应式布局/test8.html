@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var c= ()=> {
+            let w = document.documentElement.clientWidth; /* 获取设备的宽度 */
+            let n= (20*(w/320)>40?40+"px":(20)*(w/320)+"px");
+            document.documentElement.style.fontSize = n;
+        }
+        window.addEventListener("load",c);
+        window.addEventListener("resize",c);
+    </script>
+    <style>
+        html {
+            font-size: 10px;
+        }
+        div {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    var redirect = () => {
+        //  获取设备的信息
+        let userAgent = navigator.userAgent.toLowerCase();
+        //  正则表达式，判断设备类型
+        let device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/;
+        if (device.test(userAgent)) {
+            //  跳转移动端页面
+            window.location.href = "move.html";
+        } else {
+            window.location.href = "pc.html";
+        }
+    }
+    redirect();
+</script>
+</html>
