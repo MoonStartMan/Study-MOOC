@@ -1,3 +1,12 @@
+/**
+ * @file main.js
+ * @description 原生JavaScript实现的日期选择器组件，支持月份切换、日期选择和自定义事件处理
+ * @author MoonStartMan
+ * @date 2024
+ * 
+ * 原生JavaScript实现的日期选择器组件，支持月份切换、日期选择和自定义事件处理的详细实现
+ */
+
 (function() {
     var monthData, //月份数据
         wrapper, //日历外包元素
