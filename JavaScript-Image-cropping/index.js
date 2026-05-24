@@ -1,3 +1,12 @@
+/**
+ * @file index.js
+ * @description 原生JavaScript实现的图片裁剪功能，支持8个方向触点拖拽调整裁剪区域
+ * @author MoonStartMan
+ * @date 2024
+ * 
+ * 原生JavaScript实现的图片裁剪功能，支持8个方向触点拖拽调整裁剪区域的详细实现
+ */
+
 
 document.onselectstart=new Function('event.returnValue=false;');
 window.onload = function(){
